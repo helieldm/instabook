@@ -14,10 +14,12 @@ Ce projet pourra être étendu par la suite.
 ### Les jeux de tests
 Afin de faciliter le développement, les jeux de tests sont numérotés pour être passé par étapes. 
 
-Ainsi la première étape concernent simplement la structure de la base données, sans prendre en compte les contraintes de clés étrangères, ni d'unicité. Il n'y a pas besoin de factory pour cette étape, seulement des fichiers de migration. 
+Ainsi la première étape concernent simplement la structure de la base données, sans prendre en compte les contraintes de clés étrangères, ni d'unicité. Il y a besoin des fichiers de migration, ainsi que des factory qui sont fournies pour cette étape. 
+Vous aurez aussi besoin d'avoir créé les modèles et vérifié que chacun à bien le trait hasFactory (`use hasFactory;`).
 
-Ensuite, il est nécessaire de coder les modèles et les factories, pour pouvoir tester les ajouts/suppression des modèles en BDD, puis les contraintes d'unicité et de clés étrangères, dans leur forme simplifiées, c'est à dire sans relations complexes. 
-
-Ensuite il faudra coder les relations entre les modèles. 
+Ensuite, il est nécessaire de coder les relations dans les modèles, pour pouvoir tester les contraintes d'unicité et de clés étrangères, dans leur forme simplifiées, c’est-à-dire sans relations complexes. 
 
 Enfin, il faudra intégrer certaines règles de gestions, telles que l'appartenance à groupe d'une photo pour être mentionné comme apparaissant sur la photo. 
+  - Un commentaire ne peut être que fait que par un utilisateur qui appartient au même groupe que la photo
+  - La photo n'est créée que si son propriétaire appartient bien au même groupe que la photo
+  - Un utilisateur ne peut être ajouté à une photo que si il est dans le même groupe que la photo
