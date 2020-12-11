@@ -21,6 +21,39 @@ Ce projet pourra être étendu par la suite.
 7. Vous pouvez (mais n'êtes pas obligé) rajouter comme second dépôt distant le dépôt actuel : `git remote add prof )
 8. Faites votre premier push : `git push -u  origin master`. 
 
+### Création d'une base de données, 
+
+Vous aurez à créer une base de données dans MySQL : 
+`sudo mysql`
+Une fois dans mysql 
+
+```sql 
+CREATE DATABASE instabook;
+ -- CREATE USER  laravel@localhost IDENTIFIED BY 'L4R4V3l' ; --  À faire si vous n'avez pas déjà un utilisateur autre que root
+ -- On donne les droit à l'utilisateur
+ GRANT ALL ON instabook.* TO laravel@localhost; 
+```
+
+Copier le fichier `.env.example` en `.env` : 
+```sh 
+cp .env.example .env
+```
+Et remplissez les informations propres à la BDD. 
+
+
+Installer le projet à l'aide de composer : 
+```sh
+composer install
+```
+
+Créer une clé pour le .env
+```sh
+php artisan key:generate
+```
+
+À vous de jouer !!!
+
+
 ### Les jeux de tests
 Afin de faciliter le développement, les jeux de tests sont numérotés pour être passé par étapes. Un `seeder` a été fourni pour remplir la base de donnée avec un jeu de donnée valide. pour que celui ci s'execute bien, vous aurez besoin des factories (fournies), ainsi que des modèles. 
 Vous aurez aussi besoin d'avoir créé les modèles et vérifié que chacun à bien le trait hasFactory (`use hasFactory;`).
