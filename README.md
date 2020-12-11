@@ -18,7 +18,7 @@ Ce projet pourra être étendu par la suite.
 4. Initialiser git : `git init`
 5. Créez votre dépôt de rendu sur git, sans README, ni aucune autre case cochée
 6. Suivez les instructions indiquées sur git (`git add .`, `git commit -m"initial commit`, `git remote add origin url_de_votre_depot`)
-7. Vous pouvez (mais n'êtes pas obligé) rajouter comme second dépôt distant le dépôt actuel : `git remote add prof http://NF-yac.github.com/instabook)
+7. Vous pouvez (mais n'êtes pas obligé) rajouter comme second dépôt distant le dépôt actuel : `git remote add prof )
 8. Faites votre premier push : `git push -u  origin master`. 
 
 ### Les jeux de tests
