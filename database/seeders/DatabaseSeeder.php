@@ -36,7 +36,8 @@ class DatabaseSeeder extends Seeder
                     GroupUser::factory()->create(['group_id' => $group->id, 'user_id' => $user->id]);
                 }
                 Photo::factory()->count(10)->create(['group_id' => $group->id, 'user_id' => $users->random()->id]);
-                foreach($group->photos as $photo) {
+                $photos = Photo::all();
+                foreach($photos as $photo) {
                     // On comment les photos
                     Comment::factory()->count(rand(1,5))->create(['user_id' =>  $users->random()->id, 'photo_id' => $photo->id]);
         
