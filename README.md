@@ -62,6 +62,10 @@ Le modèle Photo est fourni avec une relation nécessaire pour le remplissage de
 
 Ainsi la première étape concernent simplement la structure de la base données, sans prendre en compte les contraintes de clés étrangères, ni d'unicité. Il y a besoin des fichiers de migration, ainsi que des factory qui sont fournies pour cette étape. 
 
+Si vous rencontrez des problèmes dès cette étape, essayer de réinitialiser la base de données et les jeux de test avec la commande suivante : 
+```sh
+php artisan migrate:fresh --seed
+```
 
 Ensuite, il est nécessaire de coder les relations dans les modèles, pour pouvoir tester les contraintes d'unicité et de clés étrangères, dans leur forme simplifiées, c’est-à-dire sans relations complexes. 
 
