@@ -73,3 +73,27 @@ Enfin, il faudra intégrer certaines règles de gestions, telles que l'appartena
   - Un commentaire ne peut être que fait que par un utilisateur qui appartient au même groupe que la photo
   - La photo n'est créée que si son propriétaire appartient bien au même groupe que la photo
   - Un utilisateur ne peut être ajouté à une photo que si il est dans le même groupe que la photo
+
+#Hélie Lévy de Mareüil
+Voici mon compte rendu sur le projet Instabook. Je n'ai quasiment pas eu
+de difficulté à le réaliser. J'ai commencé par créer tous les modeles, puis
+leur fichiers de migrations, j'ai ensuite fait toutes les relations quasiment sans aucun 
+problème à part peut être quand il a fallu faire les classes pivot. Pour arriver
+à fin de cette difficulté je me suis inspiré du travail réalisé sur le projet
+todo.
+
+La relation de Commmentaire vers Commentaire m'a requis un peu de réflexion,
+mais j'ai décidé de faire commme pour toute relation classique et de juste 
+préciser le nom de la clé étrangère. A la surprise de personne, ça 
+a marché.
+
+Pour le nommage des relations n'utilisant pas la convention de Laravel, 
+j'ai regardé les fichiers de test pour vérifier comment étaient appelées 
+en pratique les fonctions.
+
+Finalement, pour mettre en place les règles de création de modèle, j'ai
+surchargé la fonction ` booted() ` et à l'intérieur  `static::creating(callback)` 
+pour que la fonction entrée en paramètre ne renvoie vraie que si les 
+conditions prévues par les cas d'utilisation soient vérifiées. 
+
+Après avoir réussi cette étape, je passais l'entièreté des tests.
